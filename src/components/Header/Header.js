@@ -49,16 +49,24 @@ const Header = () => {
     );
 };
 
+const Side = styled.div`
+  flex: 1;
+`;
+
 const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px var(--spacing);
-  height: 72px;
   overflow: auto;
   border-bottom: 1px solid var(--gray-300);
   
   @media (${QUERIES.tablet}) {
-    align-items: center;  
+    align-items: center;
+    justify-content: space-between;
+    
+    ${Side} {
+      flex: revert;
+    }
   }
 `;
 
@@ -70,10 +78,6 @@ const Nav = styled.nav`
   @media (${QUERIES.tablet}) {
     display: none;
   }
-`;
-
-const Side = styled.div`
-  flex: 1;
 `;
 
 const Actions = styled.div`
