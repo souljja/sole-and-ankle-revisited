@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components/macro';
+import {QUERIES} from "../../constants";
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -64,6 +65,33 @@ table {
     float above the app.
   */
   isolation: isolate;
+}
+
+:root {
+  // palette
+  --white: hsl(0deg 0% 100%);
+  --gray-100: hsl(185deg 5% 95%);
+  --gray-300: hsl(190deg 5% 80%);
+  --gray-500: hsl(196deg 4% 60%);
+  --gray-700: hsl(220deg 5% 40%);
+  --gray-900: hsl(220deg 3% 20%);
+  --backdrop: hsl(220deg 6% 40% / 80%);
+  --primary: hsl(340deg 65% 47%);
+  --secondary: hsl(240deg 60% 63%);
+  
+  // weights
+  
+  --weight-normal: 500;
+  --weight-medium: 600;
+  --weight-bold: 800;
+  
+  // features
+  
+  --spacing: 32px;
+  
+  @media (${QUERIES.mobile}) {
+    --spacing: 16px;
+  }
 }
 
 html {

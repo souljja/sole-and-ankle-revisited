@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 
 import Header from '../Header';
 import ShoeIndex from '../ShoeIndex';
+import {QUERIES} from "../../constants";
 
 const App = () => {
   const [sortId, setSortId] = React.useState('newest');
@@ -18,7 +19,15 @@ const App = () => {
 };
 
 const Main = styled.main`
-  padding: 64px 32px;
+  padding: calc(2 * var(--spacing)) var(--spacing);
+  
+  @media (${QUERIES.tablet}) {
+    padding: calc(1.5 * var(--spacing)) var(--spacing);
+  }
+
+  @media (${QUERIES.mobile}) {
+    padding: calc(3 * var(--spacing)) var(--spacing);
+  }
 `;
 
 export default App;
